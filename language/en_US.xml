@@ -67,32 +67,6 @@
             </options>
         </specs>
         
-        <specs key="header_background_color">
-            <title>Background Color</title>
-            <description><![CDATA[
-                Specify an HTML color to use as the header background area,
-                E.G. <code>white</code> or <code>#FFFFFF</code>.
-                Defaults to <code>transparent</code>.
-            ]]></description>
-            <type>text</type>
-        </specs>
-        
-        <specs key="header_text_style">
-            <title>Text style</title>
-            <description><![CDATA[
-                Control appearance of the text. Pick a combination that fits with the background color above
-                or any body background image you may have defined.
-            ]]></description>
-            <type>list</type>
-            <options>
-                <option value="">Default (dark text)</option>
-                <option value="mhmaglite_dark_shadowed">Dark text with drop shadows</option>
-                <option value="mhmaglite_white_shadowed">White text with drop shadows</option>
-                <option value="mhmaglite_white_outlined">White text with dark outlines</option>
-                <option value="mhmaglite_white_remarked">White text with dark outlines and drop shadows</option>
-            </options>
-        </specs>
-        
         <specs key="header_links_panel">
             <title>Slogan/Links panel</title>
             <description><![CDATA[
@@ -285,36 +259,6 @@
             ]]></description>
             <type>code</type>
         </specs>
-        
-        <specs is_separator="true">Standard footer style</specs>
-        
-        <specs key="footer_background_color">
-            <title>Background Color</title>
-            <description><![CDATA[
-                Specify an HTML color to use as the standard footer background area,
-                E.G. <code>white</code> or <code>#FFFFFF</code>.<br>
-                Useful to remark the footer text when using a body background image.<br>
-                Defaults to <code>transparent</code>.
-            ]]></description>
-            <type>text</type>
-        </specs>
-        
-        <specs key="footer_text_style">
-            <title>Text style</title>
-            <description><![CDATA[
-                Control appearance of the standard footer text. Pick a combination that fits
-                with the background color above or any body background image you may have defined.
-            ]]></description>
-            <type>list</type>
-            <options>
-                <option value="">Default (dark text)</option>
-                <option value="mhmaglite_dark_shadowed">Dark text with drop shadows</option>
-                <option value="mhmaglite_white_shadowed">White text with drop shadows</option>
-                <option value="mhmaglite_white_outlined">White text with dark outlines</option>
-                <option value="mhmaglite_white_remarked">White text with dark outlines and drop shadows</option>
-            </options>
-        </specs>
-        
     </settings_data>
     
 </language>

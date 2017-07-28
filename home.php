@@ -203,13 +203,9 @@ header("Content-Type: text/html; charset=utf-8"); ?>
     }
     
     include __DIR__ . "/segments/_footer.inc";
-    
-    $footer_class   = $settings->get("templates:mh_magazine_lite.footer_text_style");
-    $footer_bgcolor = $settings->get("templates:mh_magazine_lite.footer_background_color");
-    if( ! empty($footer_bgcolor) ) $footer_bgcolor = "background-color: $footer_bgcolor;";
     ?>
     
-    <div id="footer" class="<?= $footer_class ?>" style="<?= $footer_bgcolor ?>">
+    <div id="footer">
         <?
         foreach($template->get_includes("footer_top") as $module => $include)
         {
