@@ -13,17 +13,15 @@ td       { font-family: 'Arial Narrow', Arial, Helvetica, sans-serif; font-size:
 #footer  { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; padding: 0; }
 #footer .footer_contents { padding: 20px; }
 
-#content { line-height: normal; }
-@media all and (max-width: 720px) { #content {padding-right: 0;} }
-@media all and (max-width: 480px) { #content {padding-left:  0;} }
+#content { line-height: normal; float: left; }
+@media all and (max-width: 720px) { #content {padding-left:  2px; padding-right: 2px;} }
 
 body.home, body.main                              { }
-body.home #body_wrapper, body.main #body_wrapper  { padding: 20px; max-width: 1000px; margin: auto; }
+body.home #body_wrapper, body.main #body_wrapper  { padding: 20px; max-width: 1120px; margin: auto; }
 
 @media all and (min-width: 1800px) { body.home #body_wrapper, body.main #body_wrapper  { max-width: 1400px; } }
 @media all and (max-width: 1024px) { body.home #body_wrapper, body.main #body_wrapper  { padding: 10px; max-width: none; } }
-@media all and (max-width:  768px) { body.home #body_wrapper, body.main #body_wrapper  { padding:  5px; } }
-@media all and (max-width:  480px) { body.home #body_wrapper, body.main #body_wrapper  { padding:  2px; } }
+@media all and (max-width:  768px) { body.home #body_wrapper, body.main #body_wrapper  { padding:    0; } }
 
 .dropdown_menu { font-family: Arial, Helvetica, sans-serif; }
 body.popup     { background-color: transparent; }

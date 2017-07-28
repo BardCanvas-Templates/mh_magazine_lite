@@ -8,7 +8,7 @@
 
 #right_sidebar { font-family: 'Arial Narrow', Arial, Helvetica, sans-serif;
                  font-size: 11pt; line-height: normal;
-                 float: right; padding-top: 20px; padding-right: 0; }
+                 float: right; padding-top: 20px; padding-right: 10px; }
 
 #right_sidebar .item_container             { display: inline-block; width: 100%; padding: 10px; margin-bottom: 20px;
                                              background-color: #F9F9F9; border: 1px solid #E5E5E5; border-radius: 3px; }
@@ -22,14 +22,23 @@
 #right_sidebar .item_container .content *:last-child  { margin-bottom: 0; }
 
 /* Default dimensions, for everything above  720px */
-#content       { width: calc(100% - 150px - 220px) }
-#right_sidebar { width: 220px; }
+#content       { width: calc(100% - 320px) }
+#right_sidebar { width: 320px; }
 
+/* Tablets */
+@media all and (min-width: 100px) and (max-width: 768px)
+{
+    #content       { width: calc(100% - 220px) }
+    #right_sidebar { width: 220px }
+
+    #user_info_sections { -moz-column-count:    1; -webkit-column-count:   1; column-count:   1; }
+}
+
+/* Hidden for small displays (below 720px) */
 @media all and (min-width: 100px) and (max-width: 720px)
 {
-    /* Hidden for small displays (below 720px) */
-    #content       { width: calc(100% - 150px) }
-    #right_sidebar { width: 100%; float: none; padding-left: 0; }
+    #content       { width: 100%; }
+    #right_sidebar { width: 100%; float: none; padding-left: 2px; padding-right: 2px; }
     
     #user_info_sections { -moz-column-count:    1; -webkit-column-count:   1; column-count:   1; }
 }
@@ -45,8 +54,8 @@
 
 /* 1080p and above */
 @media all and (min-width: 1920px) and (max-width: 9999px) {
-    #content       { width: calc(100% - 150px - 310px) }
-    #right_sidebar { width: 310px }
+    #content       { width: calc(100% - 320px) }
+    #right_sidebar { width: 320px }
     
     #user_info_sections { -moz-column-count:    4; -webkit-column-count:   4; column-count:   4; }
 }
@@ -54,8 +63,8 @@
 /* Laptop displays */
 @media all and (min-width: 1281px) and (max-width: 1366px)
 {
-    #content       { width: calc(100% - 150px - 260px) }
-    #right_sidebar { width: 260px }
+    #content       { width: calc(100% - 320px) }
+    #right_sidebar { width: 320px }
     
     #user_info_sections { -moz-column-count:    2; -webkit-column-count:   2; column-count:   2; }
 }
