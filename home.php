@@ -106,8 +106,8 @@ header("Content-Type: text/html; charset=utf-8"); ?>
                 <span class="fa fa-bars fa-fw"></span>
             </span>
             
-            <a id="home_menu_button" class="main_menu_item always_visible pull-left" href="<?= $config->full_root_path ?>/">
-                <span class="fa fa-home fa-fw"></span>
+            <a id="home_menu_button" class="main_menu_item current always_visible pull-left" href="<?= $config->full_root_path ?>/">
+                <?= $template->language->home ?>
             </a>
             
             <?
