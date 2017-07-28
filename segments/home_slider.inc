@@ -28,11 +28,11 @@ if( $template->get("exclude_home_slider") ) return;
 <script type="text/javascript">$(document).ready(function() { $('#posts_slider').slippry({start: 'random', captions: false, adaptiveHeight: false}); });</script>
 
 <style type="text/css">
-    #posts_slider    { margin: 0 0 20px 0; padding: 0; height: 340px; overflow: hidden; }
-    #posts_slider li { margin: 0; padding: 20px; }
+    #posts_slider    { margin: 0 0 20px 0; padding: 0; height: 380px; overflow: hidden; }
+    #posts_slider li { margin: 0; padding: 0; }
     
     #posts_slider .outer          ,
-    #posts_slider .inner          { display: block; margin: 0; padding: 0; height: 300px; width: 100%; overflow: hidden;
+    #posts_slider .inner          { display: block; margin: 0; padding: 0; height: 380px; width: 100%; overflow: hidden;
                                     text-align: center; background: none center center no-repeat; }
     
     #posts_slider .outer              { background-size: cover; }
@@ -46,7 +46,7 @@ if( $template->get("exclude_home_slider") ) return;
     #posts_slider .inner .expires     { color: yellow; }
     #posts_slider .inner img.emojione { display: inline; }
     
-    .sy-slides-wrap { border: 1px solid #757575; box-shadow: 1px 1px 2px #808080; height: 340px; }
+    .sy-slides-wrap { height: 380px; }
     .sy-pager       { margin-top: 10px; margin-bottom: 15px; padding-bottom: 5px; }
 </style>
 
