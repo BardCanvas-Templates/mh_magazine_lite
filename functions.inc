@@ -38,9 +38,9 @@ function add_admin_menu_items_to_header_menu()
     
 }
 
-function build_reponsive_body_style()
+function build_mhmaglite_body_style()
 {
-    global $settings;
+    global $settings, $template;
     
     $bgcolor  = $settings->get("templates:mh_magazine_lite.body_background_color");
     $bgpos    = $settings->get("templates:mh_magazine_lite.body_background_image_position");
@@ -48,12 +48,12 @@ function build_reponsive_body_style()
     $bgimage  = $settings->get("templates:mh_magazine_lite.body_background_image");
     $bgrepeat = $settings->get("templates:mh_magazine_lite.body_background_image_repeat");
     
-    if( empty($bgcolor)  ) $bgcolor = "white";
-    if( empty($bgimage)  ) $bgimage = "none"; else $bgimage = "url('$bgimage')";
-    if( empty($bgpos)    ) $bgpos   = "top left";
-    if( empty($bgsize)   ) $bgsize  = "contain";
+    if( empty($bgcolor)  ) $bgcolor = "black";
+    if( empty($bgimage)  ) $bgimage = "url('{$template->url}/media/default_background.jpg')"; else $bgimage = "url('$bgimage')";
+    if( empty($bgpos)    ) $bgpos   = "top center";
+    if( empty($bgsize)   ) $bgsize  = "cover";
     
-    if( empty($bgrepeat) ) $bgrepeat = "repeat";
+    if( empty($bgrepeat) ) $bgrepeat = "fixed";
     $attachment = "";
     if( $bgrepeat == "fixed" )
     {
