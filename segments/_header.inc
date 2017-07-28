@@ -15,10 +15,11 @@ $links = $settings->get("templates:mh_magazine_lite.header_links_panel");
 
 if( "{$text}{$image}" == "" ) return;
 
+$class = empty($links) ? "" : "clearfix";
 $links = parse_mhmaglite_links_list($links);
 ?>
 
-<div id="mhmaglite_custom_header">
+<div id="mhmaglite_custom_header" class="<?= $class ?>">
     <a class="logo" href="<?= $config->full_root_path ?>/">
         <? if( ! empty($image) ): ?>
             <img class="image" src="<?= $image ?>">
@@ -32,7 +33,6 @@ $links = parse_mhmaglite_links_list($links);
     <? if( ! empty($links) ): ?>
         <div class="links_panel">
             <div class="links"><?= $links ?></div>
-            <br clear="left">
         </div>
     <? endif; ?>
 </div>
