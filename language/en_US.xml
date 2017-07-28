@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language>
+    
+    <posted_in>Posted in: {$category}</posted_in>
+    
+    <posted_on_by>Posted on {$date} by {$author}</posted_on_by>
+    
+    <read_more>Read more ›</read_more>
+    
+    <author_bio><![CDATA[
+        <p><b>
+            About {$author}:
+        </b></p>
+        <ul>
+            <li>
+                Member since: {$member_since}
+            </li>
+            <li>
+                From: {$country}
+            </li>
+            <li>
+                Last seen: {$last_activity}
+            </li>
+        </ul>
+        <p>
+            <a href="{$profile_link}">View full profile ›</a>
+        </p>
+    ]]></author_bio>
+    
+    <settings_data>
+        <title>MH Magazine Lite template</title>
+        
+        <specs is_separator="true">Header</specs>
+        
+        <specs key="disable_header">
+            <title>Disable this template header?</title>
+            <description><![CDATA[
+                By default, the template header is enabled and shown when contents are defined.
+                If you're using a customizable header module, you should either
+                disable it and use the included customization below or select "Yes"
+                to disable this template's header.
+            ]]></description>
+            <type>yes/no</type>
+        </specs>
+        
+        <specs key="header_logo_text">
+            <title>Header logo text</title>
+            <description><![CDATA[
+                Type a short caption to use as logo text if you don't have an image logo.
+                It will be rendered at the left of the header.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="header_logo_image">
+            <title>Header logo icon/image</title>
+            <description><![CDATA[
+                If you have a logo icon, you can select it here and have it rendered at the
+                left of the logo text specified above.<br>
+                If you have a logo image, you can leave the logo text empty and specify the logo here.<br>
+                <i class="fa fa-info-circle"></i>
+                The icon or logo should have a height no bigger than 200px. It will be resized keeping the aspect ratio.
+            ]]></description>
+            <type>@gallery:specs_renderer/image_selector</type>
+            <options>
+                <image_size>full</image_size>
+            </options>
+        </specs>
+        
+        <specs key="header_background_color">
+            <title>Background Color</title>
+            <description><![CDATA[
+                Specify an HTML color to use as the header background area,
+                E.G. <code>white</code> or <code>#FFFFFF</code>.
+                Defaults to <code>transparent</code>.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="header_text_style">
+            <title>Text style</title>
+            <description><![CDATA[
+                Control appearance of the text. Pick a combination that fits with the background color above
+                or any body background image you may have defined.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="">Default (dark text)</option>
+                <option value="mhmaglite_dark_shadowed">Dark text with drop shadows</option>
+                <option value="mhmaglite_white_shadowed">White text with drop shadows</option>
+                <option value="mhmaglite_white_outlined">White text with dark outlines</option>
+                <option value="mhmaglite_white_remarked">White text with dark outlines and drop shadows</option>
+            </options>
+        </specs>
+        
+        <specs key="header_links_panel">
+            <title>Slogan/Links panel</title>
+            <description><![CDATA[
+                You can add a slogan or links to local pages, external URLs or social network icons
+                at the right of the logo.<br><br>
+                If you decide to use a slogan, just type it in the code box.<br>
+                If you decide to show links here, type a list using the next syntax:
+                
+                <pre>* Caption:     <code>/local-path</code>
+* Caption:     <code>http://external-site.com</code>
+* @brand-icon: <code>http://well-known-brand-site.com</code></pre>
+                
+                As you may notice, every link must be placed on a single line and started with an
+                asterisk, like a bullet list.<br><br>
+                
+                Whatever you type as caption is shown as the link to either the path or the URL.<br><br>
+                
+                If instead of caption you type <code>@brand-icon</code>, the corresponding brand
+                icon from the Font Awesome icon set will be rendered as caption.
+                <a href="http://fontawesome.io/icons/#brand" target="_blank">Full reference here</a>.
+                <br><br>
+                
+                Examples:
+                <pre>* Home:      /
+* Contact:   /contact
+* @facebook: https://www.facebook.com/BardCanvas
+* @twitter:  https://twitter.com/BardCanvas
+* @linkedin: https://www.linkedin.com/company-beta/2447840/</pre>
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs is_separator="true">Body appearance</specs>
+        
+        <specs key="body_background_color">
+            <title>Background Color</title>
+            <description><![CDATA[
+                Specify an HTML color to use as the body background,
+                E.G. <code>white</code> or <code>#FFFFFF</code>.
+                Defaults to <code>white</code>.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="body_background_image">
+            <title>Background image</title>
+            <description><![CDATA[
+                Specify an image to set as background
+            ]]></description>
+            <type>@gallery:specs_renderer/image_selector</type>
+            <options>
+                <image_size>full</image_size>
+            </options>
+        </specs>
+        
+        <specs key="body_background_image_position">
+            <title>Background image position</title>
+            <description><![CDATA[
+                Only used when the body background image is specified.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="top left"     >Top left (default)</option>
+                <option value="top center"   >Top center</option>
+                <option value="top right"    >Top right</option>
+                <option value="left center"  >Middle left</option>
+                <option value="center center">Middle center</option>
+                <option value="center right" >Middle right</option>
+                <option value="bottom left"  >Bottom left</option>
+                <option value="bottom center">Bottom center</option>
+                <option value="bottom right" >Bottom right</option>
+            </options>
+        </specs>
+        
+        <specs key="body_background_image_size">
+            <title>Background image size</title>
+            <description><![CDATA[
+                Specify a sizing directive for the body background image.
+                In all cases, the aspect ratio is kept.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="contain"  >Contain in the viewport, no cropping (default)</option>
+                <option value="cover"    >Cover the entire viewport, cropping the edges if needed</option>
+                <option value="auto"     >No resizing</option>
+                <option value="50vw auto">50% of the viewport width</option>
+                <option value="auto 50vh">50% of the viewport height</option>
+            </options>
+        </specs>
+        
+        <specs key="body_background_image_repeat">
+            <title>Background image repetition</title>
+            <description><![CDATA[
+                How do you want the image to be repeated?
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="repeat"   >Tile across the page</option>
+                <option value="repeat-x" >Repeat horizontally</option>
+                <option value="repeat-y" >Repeat vertically</option>
+                <option value="no-repeat">No repetition (show once)</option>
+                <option value="fixed"    >Keep fixed (not scrollable)</option>
+            </options>
+        </specs>
+        
+        <specs is_separator="true">Footer (additionally provided by this template)</specs>
+        
+        <specs key="disable_footer">
+            <title>Disable this template footer?</title>
+            <description><![CDATA[
+                By default, the template footer is enabled and shown when contents are defined.
+                This footer is an addition to the standard footer... it doesn't replace it, just adds
+                a few sections above it for the Home and Main layouts.
+            ]]></description>
+            <type>yes/no</type>
+        </specs>
+        
+        <specs key="footer_section1">
+            <title>Contents for section #1</title>
+            <description><![CDATA[
+                This section can be used with some "about us" information.<br><br>
+                
+                <b>Note:</b> The first line of the contents will be used as title for the section.<br><br>
+                
+                You can add a list of bullets with links using the same conventions used
+                at the Slogan/links panel of the header, E.G.:
+                
+                <pre>* Caption:     <code>/local-path</code>
+* Caption:     <code>http://external-site.com</code>
+* @brand-icon: <code>http://well-known-brand-site.com</code></pre>
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_section2">
+            <title>Contents for section #2</title>
+            <description><![CDATA[
+                This section can be used with a list of quick links.<br><br>
+                
+                <b>Note:</b> The first line of the contents will be used as title for the section.<br><br>
+                
+                You can add a list of bullets with links using the same syntax as above.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_section3">
+            <title>Contents for section #3</title>
+            <description><![CDATA[
+                This section can be used with a secondary list of quick links.<br><br>
+                
+                <b>Note:</b> The first line of the contents will be used as title for the section.<br><br>
+                
+                You can add a list of bullets with links using the same syntax as above.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_links_row_left">
+            <title>Lower links row, left side</title>
+            <description><![CDATA[
+                This row is rendered below the previous sections and it behaves in the same way
+                as the Slogan/links panel of the header, so the list of links is not rendered
+                as a bullets list, but as inline links separated by the <code>|</code> (pipe) character.<br><br>
+                
+                The syntax is the same as the previous sections:
+                
+                <pre>* Caption:     <code>/local-path</code>
+* Caption:     <code>http://external-site.com</code>
+* @brand-icon: <code>http://well-known-brand-site.com</code></pre>
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_links_row_right">
+            <title>Lower links row, right side</title>
+            <description><![CDATA[
+                This part will only recognize branding icons from a list using the same directives
+                as the left side.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_final_row">
+            <title>Final footer row</title>
+            <description><![CDATA[
+                Use this section as a "Get in touch" invitation.<br><br>
+                
+                The first line is used as title for the section, and the rest as a normal paragraph.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs is_separator="true">Standard footer style</specs>
+        
+        <specs key="footer_background_color">
+            <title>Background Color</title>
+            <description><![CDATA[
+                Specify an HTML color to use as the standard footer background area,
+                E.G. <code>white</code> or <code>#FFFFFF</code>.<br>
+                Useful to remark the footer text when using a body background image.<br>
+                Defaults to <code>transparent</code>.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="footer_text_style">
+            <title>Text style</title>
+            <description><![CDATA[
+                Control appearance of the standard footer text. Pick a combination that fits
+                with the background color above or any body background image you may have defined.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="">Default (dark text)</option>
+                <option value="mhmaglite_dark_shadowed">Dark text with drop shadows</option>
+                <option value="mhmaglite_white_shadowed">White text with drop shadows</option>
+                <option value="mhmaglite_white_outlined">White text with dark outlines</option>
+                <option value="mhmaglite_white_remarked">White text with dark outlines and drop shadows</option>
+            </options>
+        </specs>
+        
+    </settings_data>
+    
+</language>

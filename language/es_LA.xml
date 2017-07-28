@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language>
+    
+    <posted_in>Registrada en: {$category}</posted_in>
+    
+    <posted_on_by>Registrada en {$date} por {$author}</posted_on_by>
+    
+    <read_more>Leer más ›</read_more>
+    
+    <author_bio><![CDATA[
+        <p><b>
+            Acerca de {$author}:
+        </b></p>
+        <ul>
+            <li>
+                Miembro desde: {$member_since}
+            </li>
+            <li>
+                De: {$country}
+            </li>
+            <li>
+                Última vez visto: {$last_activity}
+            </li>
+        </ul>
+        <p>
+            <a href="{$profile_link}">Ver perfil completo ›</a>
+        </p>
+    ]]></author_bio>
+    
+    <settings_data>
+        <title>Plantilla MH Magazine Lite</title>
+        
+        <specs is_separator="true">Encabezado</specs>
+        
+        <specs key="disable_header">
+            <title>Desactivar el encabezado de esta plantilla?</title>
+            <description><![CDATA[
+                De forma predeterminada, el encabezado de esta plantilla está activo y se muestra
+                cuando tiene contenidos.
+                Si estás usando un módulo de encabezado personalizable, deberías
+                desactivarlo y usar las opciones de personalización incluídas debajo
+                o seleccionar "Sí" y desactivar estas funciones.
+            ]]></description>
+            <type>yes/no</type>
+        </specs>
+        
+        <specs key="header_logo_text">
+            <title>Texto de logo</title>
+            <description><![CDATA[
+                Escribe una leyenda corta para usar como logo si no tienes una imagen elaborada.
+                Se mostrará a la izquierda del encabezado.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="header_logo_image">
+            <title>Imagen o icono del logo</title>
+            <description><![CDATA[
+                Si tienes un icono como logo, puedes especificarlo aquí para que se incruste a la izquierda
+                del texto definido anteriormente.<br>
+                Si tienes una imagen, puedes dejar el texto de logo vacío y especificar la imagen aquí.<br>
+                <i class="fa fa-info-circle"></i>
+                El icono o imagen debería tener un alto no mayor a 200px. Se ajustará automáticamente manteniendo
+                su aspecto.
+            ]]></description>
+            <type>@gallery:specs_renderer/image_selector</type>
+            <options>
+                <image_size>full</image_size>
+            </options>
+        </specs>
+        
+        <specs key="header_background_color">
+            <title>Color de fondo</title>
+            <description><![CDATA[
+                Especifica un color HTML a usar como fondo del encabezado,
+                P.E.. <code>white</code> o <code>#FFFFFF</code>.
+                Se usa <code>transparent</code> como predeterminado.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="header_text_style">
+            <title>Estilo del texto</title>
+            <description><![CDATA[
+                Contolra la apariencia del texto. Elige una combinación que concuerde con el color de fondo
+                especificado anteriormente o con cualquier imagen de fondo que hubieses definido para el cuerpo.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="">Predeterminado (texto oscuro)</option>
+                <option value="mhmaglite_dark_shadowed">Texto oscuro con sombras</option>
+                <option value="mhmaglite_white_shadowed">Texto blanco con sombras</option>
+                <option value="mhmaglite_white_outlined">Texto blanco con contorno oscuro</option>
+                <option value="mhmaglite_white_remarked">Texto blanco con contorno oscuro y sombras</option>
+            </options>
+        </specs>
+        
+        <specs key="header_links_panel">
+            <title>Slogan/panel de vínculos</title>
+            <description><![CDATA[
+                Puedes añadir un slogan o vínculos a páginas locales o URLs con iconos de redes sociales
+                a la derecha del logo..<br><br>
+                Si decides usar un slogan, sólo escríbelo en la caja de código.<br>
+                Si decides mostrar vínculos, puedes especificar una lista usando la siguiente sintaxis:
+                
+                <pre>* Leyenda:         <code>/ruta-local</code>
+* Leyenda:         <code>http://dominio.com</code>
+* @icono-de-marca: <code>http://sitio-conocido.com</code></pre>
+                
+                Como podrás notar, cada vínculo debe ser colocado en una línea y debe iniciar con
+                un asterisco, como en una lista de viñetas.<br><br>
+                
+                Cualquier cosa que escribas como leyenda se mostrará como ancla del vínculo.<br><br>
+                
+                Si en vez de usar una leyenda escribes <code>@icono-de-marca</code>, el icono correspondiente
+                a la marca del set de iconos de Font Awesome se mostrará en vez de la leyenda.
+                <a href="http://fontawesome.io/icons/#brand" target="_blank">Ver referencia de marcas aquí</a>.
+                <br><br>
+                
+                Ejemplos:
+                <pre>* Inicio:    /
+* Contacto:  /contact
+* @facebook: https://www.facebook.com/BardCanvas
+* @twitter:  https://twitter.com/BardCanvas
+* @linkedin: https://www.linkedin.com/company-beta/2447840/</pre>
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs is_separator="true">Apariencia del cuerpo</specs>
+        
+        <specs key="body_background_color">
+            <title>Color de fondo</title>
+            <description><![CDATA[
+                Especifica un color a usar para el fondo de la página,
+                P.E. <code>white</code> or <code>#FFFFFF</code>.
+                Por defecto se usa <code>white</code>.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="body_background_image">
+            <title>Imagen de fondo</title>
+            <description><![CDATA[
+                Especifica una imagen a usar de fondo en la página.
+            ]]></description>
+            <type>@gallery:specs_renderer/image_selector</type>
+            <options>
+                <image_size>full</image_size>
+            </options>
+        </specs>
+        
+        <specs key="body_background_image_position">
+            <title>Posición de la imagen de fondo</title>
+            <description><![CDATA[
+                Sólo usado cuando se ha definido una imagen.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="top left"     >Arriba a la izquierda (predeterminado)</option>
+                <option value="top center"   >Arriba al centro</option>
+                <option value="top right"    >Arriba a la derecha</option>
+                <option value="left center"  >Centro a la izquierda</option>
+                <option value="center center">Centrado en la página</option>
+                <option value="center right" >Centro a la derecha</option>
+                <option value="bottom left"  >Abajo a la izquierda</option>
+                <option value="bottom center">Abajo al centro</option>
+                <option value="bottom right" >Abajo a la derecha</option>
+            </options>
+        </specs>
+        
+        <specs key="body_background_image_size">
+            <title>Tamaño de la imagen de fondo</title>
+            <description><![CDATA[
+                Especifica una directiva de tamaño para la imagen de fondo.
+                En todos los casos, se mantiene la relación de aspecto.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="contain"  >Contener a la vista sin recortar (predeterminado)</option>
+                <option value="cover"    >Cubrir la vista, recortando los bordes</option>
+                <option value="auto"     >Tamaño original</option>
+                <option value="50vw auto">50% del ancho de la ventana</option>
+                <option value="auto 50vh">50% del alto de la ventana</option>
+            </options>
+        </specs>
+        
+        <specs key="body_background_image_repeat">
+            <title>Repetición de la imagen de fondo</title>
+            <description><![CDATA[
+                ¿Cómo deseas que se repita la imagen?
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="repeat"   >Mosaico en toda la página</option>
+                <option value="repeat-x" >Repetir horizontalmente</option>
+                <option value="repeat-y" >Repetir verticalmente</option>
+                <option value="no-repeat">Sin repetir (mostrar una sola vez)</option>
+                <option value="fixed"    >Fijar en el fondo (no se desplaza)</option>
+            </options>
+        </specs>
+        
+        <specs is_separator="true">Pie de página (adicionalmente proveído por esta plantilla)</specs>
+        
+        <specs key="disable_footer">
+            <title>¿Deshabilitar el pie de página?</title>
+            <description><![CDATA[
+                De forma predeterminada, el pie de página está activo y se muestra cuando tiene
+                contenido definido.
+                Este pie de página es adicional al pie de página normal... no lo reemplaza,
+                sólo agrega algunas secciones sobre él en las distribuciones de inicio y principal.
+            ]]></description>
+            <type>yes/no</type>
+        </specs>
+        
+        <specs key="footer_section1">
+            <title>Contenido de la sección #1</title>
+            <description><![CDATA[
+                Esta sección se puede usar con información acerca del sitio o la empresa.<br><br>
+                
+                <b>Nota:</b> La primera línea del contenido se usará como título de la sección.<br><br>
+                
+                Puedes añadir una lista de viñetas con vínculos usando las mismas reglas usadas
+                en el panel de links del encabezado, P.E.:
+                
+                <pre>* Leyenda:         <code>/ruta-local</code>
+* Leyenda:         <code>http://dominio.com</code>
+* @icono-de-marca: <code>http://sitio-conocido.com</code></pre>
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_section2">
+            <title>Contenido de la sección #2</title>
+            <description><![CDATA[
+                Esta sección puede ser usada con una lista rápida de vínculos.<br><br>
+                
+                <b>Nota:</b> La primera línea del contenido se usará como título de la sección.<br><br>
+                
+                Puedes añadir una lista de viñetas con vínculos usando la sintaxis mencionada con anterioridad.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_section3">
+            <title>Contenido de la seccióp #3</title>
+            <description><![CDATA[
+                Esta sección puede ser usada como una segunda lista rápida de vínculos.<br><br>
+                
+                <b>Nota:</b> La primera línea del contenido se usará como título de la sección.<br><br>
+                
+                Puedes añadir una lista de viñetas con vínculos usando la sintaxis mencionada con anterioridad.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_links_row_left">
+            <title>Fila inferior de vínculos, costado izquierdo</title>
+            <description><![CDATA[
+                Esta fila es incrustada debajo de las secciones anteriormente descritas y se comporta
+                de la misma forma que el panel de links/slogan en el encabezado (mostrando los vínculos
+                en línea y no como lista de viñetas).<br><br>
+                
+                La sintaxis es la misma que en las secciones anteriores:
+                
+                <pre>* Leyenda:         <code>/ruta-local</code>
+* Leyenda:         <code>http://dominio.com</code>
+* @icono-de-marca: <code>http://sitio-conocido.com</code></pre>
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_links_row_right">
+            <title>Fila de vínculos, costado derecho</title>
+            <description><![CDATA[
+                This row is rendered below the previous sections and it behaves in the same way
+                as the Slogan/links panel of the header, so the list of links is not rendered
+                as a bullets list, but as inline elements separated by a pipe character (<code>|</code>).<br><br>
+                
+                The syntax is the same as above.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs key="footer_final_row">
+            <title>Fila final</title>
+            <description><![CDATA[
+                Usa esta sección para escribir una invitación a ponerse en contacto o un mensaje que parezca personal.<br><br>
+                
+                La primera fila es usada como título de la sección. El resto se usa como un párrafo normal.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
+        <specs is_separator="true">Estilos para el pie de página estándar</specs>
+        
+        <specs key="footer_background_color">
+            <title>Color de fondo</title>
+            <description><![CDATA[
+                Especifica un color HTML a usar de fondo en el pie de página estándar,
+                P.E. <code>white</code> o <code>#FFFFFF</code>.<br>
+                Esto es útil para remarcar el texto del pie de página cuando usas una imagen de fondo en el cuerpo.<br>
+                Se usa <code>transparent</code> como predeterminado.
+            ]]></description>
+            <type>text</type>
+        </specs>
+        
+        <specs key="footer_text_style">
+            <title>Estilo del texto</title>
+            <description><![CDATA[
+                Contolra la apariencia del texto. Elige una combinación que concuerde con el color de fondo
+                especificado anteriormente o con cualquier imagen de fondo que hubieses definido para el cuerpo.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value="">Predeterminado (texto oscuro)</option>
+                <option value="mhmaglite_dark_shadowed">Texto oscuro con sombras</option>
+                <option value="mhmaglite_white_shadowed">Texto blanco con sombras</option>
+                <option value="mhmaglite_white_outlined">Texto blanco con contorno oscuro</option>
+                <option value="mhmaglite_white_remarked">Texto blanco con contorno oscuro y sombras</option>
+            </options>
+        </specs>
+        
+    </settings_data>
+    
+</language>

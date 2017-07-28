@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template>
+    
+    <name>MH Magazine Lite template</name>
+    <version>1.0.1</version>
+    <group>templates_free</group>
+    
+    <description>
+        Inspired by the "MH Magazine Lite" template for Wordpress by MH themes
+    </description>
+    
+    <tags>responsive, wordpress clone, mobile, desktop</tags>
+    
+    <author>
+        <company>LAVA SoftWorks</company>
+        <name>Alejandro Caballero</name>
+        <email>lava.caballero@gmail.com</email>
+    </author>
+    
+    <website>https://bardcanvas.com/mh-magazine-lite-template</website>
+    
+</template>
