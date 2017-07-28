@@ -9,7 +9,7 @@
 /* Slider, for the home page */
 
 #posts_slider {
-    font-family: 'Arial Narrow', Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans Condensed', 'Arial Narrow', Arial, Helvetica, sans-serif;
     margin-bottom: 20px; background-color: white;
 }
 
@@ -289,7 +289,7 @@ article.special, .featured_post.special { border: 2px solid darkorange; border-l
 
 /* Post comments on indexes */
 
-ul.post_comments { padding-left: 22px; font-family: 'Arial Narrow', Arial, Helvetica, sans-serif;
+ul.post_comments { padding-left: 22px; font-family: 'Open Sans Condensed', 'Arial Narrow', Arial, Helvetica, sans-serif;
                    font-size: 11pt; line-height: 1.1em; margin-top: 10px !important; margin-bottom: 0; }
 ul.post_comments .emojione { height: 1em; }
 ul.post_comments li img { max-width: 100%; }
