@@ -12,9 +12,6 @@ if( $settings->get("templates:mh_magazine_lite.disable_footer") == "true" ) retu
 $s1 = $settings->get("templates:mh_magazine_lite.footer_section1");
 $s2 = $settings->get("templates:mh_magazine_lite.footer_section2");
 $s3 = $settings->get("templates:mh_magazine_lite.footer_section3");
-$rl = $settings->get("templates:mh_magazine_lite.footer_links_row_left");
-$rr = $settings->get("templates:mh_magazine_lite.footer_links_row_right");
-$fr = $settings->get("templates:mh_magazine_lite.footer_final_row");
 
 $sections = array();
 
@@ -31,7 +28,7 @@ if( ! empty($frames) )
         
         $sections[] = "
             <div class='mhmaglite_footer row1'>
-                <div class='content_frame'>
+                <div class='segment'>
                     <h3>$title</h3>
                     <div>$content</div>
                 </div>
@@ -50,7 +47,7 @@ if( ! empty($frames) )
             $content = parse_mhmaglite_links_list($content, true);
             
             $markup .= "
-                <div class='content_frame col {$class}'>
+                <div class='segment col {$class}'>
                     <h3>$title</h3>
                     <div>$content</div>
                 </div>
@@ -59,36 +56,6 @@ if( ! empty($frames) )
         $markup .= "</div>";
         $sections[] = $markup;
     }
-}
-
-if( "{$rl}{$rr}" != "" )
-{
-    $dclass = "";
-    if(       empty($rl) && ! empty($rr) ) $dclass = "alignright";
-    elseif( ! empty($rl) && ! empty($rr) ) $dclass = "clearfix";
-    
-    $markup = "<div class='mhmaglite_footer row2'><div class='content_frame $dclass'>";
-    
-    if( ! empty($rl) ) $markup .= "<div class='panel left'>" . parse_mhmaglite_links_list($rl) . "</div>";
-    if( ! empty($rr) ) $markup .= "<div class='panel right'>" . parse_mhmaglite_links_list($rr) . "</div>";
-    
-    $markup .= "</div></div>";
-    
-    $sections[] = $markup;
-}
-
-if( ! empty($fr) )
-{
-    list($title, $content) = separate_mhmaglite_footer_section($fr);
-    
-    $sections[] = "
-        <div class='mhmaglite_footer row3'>
-            <div class='content_frame'>
-                <h3>$title</h3>
-                <p>$content</p>
-            </div>
-        </div>
-    ";
 }
 
 echo implode("\n", $sections);

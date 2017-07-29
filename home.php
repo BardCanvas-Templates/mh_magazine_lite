@@ -185,8 +185,6 @@ header("Content-Type: text/html; charset=utf-8"); ?>
         $this_module = $modules[$module];
         include "{$this_module->abspath}/contents/{$include}";
     }
-    
-    include __DIR__ . "/segments/_footer.inc";
     ?>
     
     <div id="footer">
@@ -196,6 +194,8 @@ header("Content-Type: text/html; charset=utf-8"); ?>
             $this_module = $modules[$module];
             include "{$this_module->abspath}/contents/{$include}";
         }
+        
+        include __DIR__ . "/segments/_footer.inc";
         
         $footer_contents = $template->get("footer_contents");
         if( empty($footer_contents) ) $footer_contents = '

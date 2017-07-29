@@ -274,43 +274,6 @@
             <type>code</type>
         </specs>
         
-        <specs key="footer_links_row_left">
-            <title>Fila inferior de vínculos, costado izquierdo</title>
-            <description><![CDATA[
-                Esta fila es incrustada debajo de las secciones anteriormente descritas y se comporta
-                de la misma forma que el panel de links/slogan en el encabezado (mostrando los vínculos
-                en línea y no como lista de viñetas).<br><br>
-                
-                La sintaxis es la misma que en las secciones anteriores:
-                
-                <pre>* Leyenda:         <code>/ruta-local</code>
-* Leyenda:         <code>http://dominio.com</code>
-* @icono-de-marca: <code>http://sitio-conocido.com</code></pre>
-            ]]></description>
-            <type>code</type>
-        </specs>
-        
-        <specs key="footer_links_row_right">
-            <title>Fila de vínculos, costado derecho</title>
-            <description><![CDATA[
-                This row is rendered below the previous sections and it behaves in the same way
-                as the Slogan/links panel of the header, so the list of links is not rendered
-                as a bullets list, but as inline elements separated by a pipe character (<code>|</code>).<br><br>
-                
-                The syntax is the same as above.
-            ]]></description>
-            <type>code</type>
-        </specs>
-        
-        <specs key="footer_final_row">
-            <title>Fila final</title>
-            <description><![CDATA[
-                Usa esta sección para escribir una invitación a ponerse en contacto o un mensaje que parezca personal.<br><br>
-                
-                La primera fila es usada como título de la sección. El resto se usa como un párrafo normal.
-            ]]></description>
-            <type>code</type>
-        </specs>
     </settings_data>
     
 </language>
