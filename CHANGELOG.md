@@ -1,6 +1,6 @@
 
 # MH Magazine Lite Template Change Log
 
-## [Unreleased]
+## [1.0.0] - 2017-07-29
 
 - Initial release.
