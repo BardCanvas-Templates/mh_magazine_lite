@@ -15,6 +15,9 @@ td       { font-family: 'Open Sans Condensed', 'Arial Narrow', Arial, Helvetica,
 #footer  { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 11pt; padding: 0; }
 #footer .footer_contents { padding: 20px; }
 
+#header .menu                 { text-transform: uppercase; font-weight: bold; font-size: 14px; }
+#header .menu .main_menu_item { padding-left: 20px; padding-right: 20px; }
+
 #content { line-height: normal; float: left; padding: 20px; }
 @media all and (max-width: 720px) { #content {padding-left:  2px; padding-right: 2px;} }
 
@@ -31,8 +34,8 @@ body.popup     { background-color: transparent; }
 textarea, pre, .fixed_font, code { font-family: 'Lucida Console', 'Courier new', 'Courier', monospace; font-size: 10pt; }
 textarea.no_fw_font              { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 12pt; }
 
-h1 { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 32px; line-height: normal; }
-h2 { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 26px; line-height: normal; }
+h1 { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; line-height: normal; }
+h2 { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 24px; line-height: normal; }
 h3 { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 20px; line-height: normal; }
 
 body.admin h1, body.popup h1 { font-size: 14pt; }
@@ -107,14 +110,14 @@ h3 .emojione { height: 20px; }
 #user_profile_area .extras                 { font-size: 12pt; }
 
 #user_profile_area .avatar     { background-color: white; padding: 5px;
-                                 border: 1px solid silver; border-radius: 3px;
+                                 border: 1px solid silver;
                                  display: inline-block; position: absolute; margin-top: 165px; margin-left: 20px; }
 #user_profile_area .avatar img { width: 150px; height: 150px; }
 
 #user_profile_tabs              { min-height: 45px; margin-bottom: 20px; margin-left: 190px; margin-top: 5px;
                                   padding-bottom: 5px; }
 #user_profile_tabs .tab         { display: inline-block; padding: 5px 8px; text-align: center;
-                                  color: #c0f; border-radius: 3px; }
+                                  color: #c0f; }
 #user_profile_tabs .tab.current { color: white; background-color: #c0f; }
 
 #user_info_sections { -moz-column-gap:   10px; -webkit-column-gap:   5px; column-gap:   5px; }
@@ -130,7 +133,7 @@ h3 .emojione { height: 20px; }
 /* Signatures, for both base pages and tinymce */
 
 .author_signature                         { margin-top: 20px; padding: 10px; 
-                                            border: 1px solid #D6D6D6; border-radius: 3px; background-color: #F9F9F9;
+                                            border: 1px solid #D6D6D6; background-color: #F9F9F9;
                                             font-size: 11pt; line-height: normal; }
 body#tinymce[data-id="account_signature"] { font-size: 11pt; line-height: normal; }
 

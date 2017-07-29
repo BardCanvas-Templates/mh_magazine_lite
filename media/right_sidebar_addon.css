@@ -10,13 +10,14 @@
                  font-size: 11pt; line-height: normal;
                  float: right; padding-top: 20px; padding-right: 20px; }
 
-#right_sidebar .item_container             { display: inline-block; width: 100%; padding: 10px; margin-bottom: 20px;
-                                             background-color: #F9F9F9; border: 1px solid #E5E5E5; border-radius: 3px; }
-#right_sidebar .item_container.highlighted { background-color: #E4EFFA; }
+#right_sidebar .item_container             { display: inline-block; width: 100%; margin-bottom: 20px;
+                                             background-color: white; }
+#right_sidebar .item_container.highlighted { background-color: #F5F5F5; }
 
-#right_sidebar .item_container h3         { margin: 0 0 5px 0; padding: 0 0 5px 0; border-bottom: none; color: #555555; }
+#right_sidebar .item_container h3         { margin: 0 0 5px 0; padding: 0 0 5px 0; border-bottom: 3px solid #E64946;
+                                            font-size: 16px; text-transform: uppercase; }
 #right_sidebar .item_container h3:empty   { display: none; }
-#right_sidebar .item_container .content   { padding: 5px; }
+#right_sidebar .item_container .content   { }
 
 #right_sidebar .item_container .content *:first-child { margin-top: 0; }
 #right_sidebar .item_container .content *:last-child  { margin-bottom: 0; }

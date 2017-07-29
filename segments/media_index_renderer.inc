@@ -31,12 +31,26 @@ $this_module = $modules["gallery"];
         <article class="post <?= $special ?> clearfix" data-post-id="<?= $item->id_post ?>"
                  data-main-category="<?= $item->main_category_slug ?>"
                  data-author-role="<?= $author->get_role(true) ?>" data-author-level="<?= $author->level ?>">
+
+            <a class="post_featured_image thumbnail <?= $item->type ?>" href="<?= $item->get_page_url() ?>"
+               src="<?= $config->full_root_path ?>/media_toolbox/render_blank_thumbnail"
+               style="background: url('<?= $item->get_thumbnail_url() ?>') center center no-repeat; background-size: cover;"></a>
             
-            <div class="meta_box clearfix">
+            <div class="post_contents">
                 
-                <img class="user_avatar" src="<?= $author->get_avatar_url() ?>">
+                <!-- Title -->
+                <a href="<?= $item->get_page_url() ?>">
+                    <h1><?= $item->get_processed_title(false) ?></h1>
+                </a>
                 
-                <div class="meta_section upper">
+                <!-- Category and hashtags -->
+                <div class="meta_box">
+                    
+                    <a class="meta_field dimmed" href="<?= $config->full_root_url ?>/date/<?= date("Y/m/d", strtotime($item->publishing_date)) ?>/">
+                        <span class="fa fa-calendar fa-fw"></span>
+                        <?= time_today_string($item->publishing_date) . " (" . time_elapsed_string($item->publishing_date) . ")" ?>
+                    </a>
+                    
                     <a class="meta_field user_display_name" data-user-level="<?= $author->level ?>"
                        href="<?= $config->full_root_url ?>/user/<?= $author->user_name ?>/">
                         <span class="fa fa-user fa-fw"></span>
@@ -82,12 +96,6 @@ $this_module = $modules["gallery"];
                             <?= $tag ?>
                         </a>
                     <? endforeach; ?>
-                </div>
-                <div class="meta_section">
-                    <a class="meta_field dimmed" href="<?= $config->full_root_url ?>/date/<?= date("Y/m/d", strtotime($item->publishing_date)) ?>/">
-                        <span class="fa fa-calendar fa-fw"></span>
-                        <?= time_today_string($item->publishing_date) . " (" . time_elapsed_string($item->publishing_date) . ")" ?>
-                    </a>
                     
                     <? if( $account->level >= config::MODERATOR_USER_LEVEL ): ?>
                         <span class="meta_field critical">
@@ -96,42 +104,36 @@ $this_module = $modules["gallery"];
                         </span>
                     <? endif; ?>
                 </div>
-            
-            </div>
-            
-            <a href="<?= $item->get_page_url() ?>">
-                <h1><?= $item->get_processed_title(false) ?></h1>
-                <div class="post_featured_image thumbnail <?= $item->type ?>">
-                    <? if( $item->type == "image"): ?>
-                        <img src="<?= $item->get_thumbnail_url() ?>">
-                    <? else: ?>
-                        <img class="windowed_image" src="<?= $config->full_root_path ?>/media_toolbox/render_blank_thumbnail"
-                             style="background-image: url('<?= $item->get_thumbnail_url() ?>')">
+                
+                <div class="post_contents post_excerpt">
+                    <?
+                    $excerpt = $item->get_description_excerpt();
+                    if( ! empty($excerpt) ) $excerpt .= "<br><br>";
+                    echo $excerpt;
+                    ?>
+                    <? if( $account->level >= config::MODERATOR_USER_LEVEL ): ?>
+                        <a class="greengo inline-block" href="<?= $config->full_root_path ?>/gallery/?edit_item=<?= $item->id_media ?>&wasuuup=<?= md5(mt_rand(1, 65535)) ?>"
+                           ><span class="fa fa-pencil fa-fw"></span><?= $language->edit ?></a>
+                    <? endif; ?>
+                    <? if( $item->can_be_deleted() ): ?>
+                        <span class="critical pseudo_link inline-block"
+                              onclick="if( confirm($_GENERIC_CONFIRMATION) ) trash_media('<?= $item->id_media ?>', this, function() { $('article[data-post-id=<?= $item->id_post ?>]').fadeOut('fast', function() { $(this).remove(); }) })"
+                              ><span class="fa fa-trash fa-fw"></span><?= $current_module->language->record_nav->actions->trash ?></span>
                     <? endif; ?>
                 </div>
-            </a>
-            
-            <div class="post_contents post_excerpt">
-                <?= $item->get_description_excerpt() ?>
-                <? if( $account->level >= config::MODERATOR_USER_LEVEL ): ?>
-                    <a class="greengo inline-block" href="<?= $config->full_root_path ?>/gallery/?edit_item=<?= $item->id_media ?>&wasuuup=<?= md5(mt_rand(1, 65535)) ?>"
-                       ><span class="fa fa-pencil fa-fw"></span><?= $language->edit ?></a>
-                <? endif; ?>
-                <? if( $item->can_be_deleted() ): ?>
-                    <span class="critical pseudo_link inline-block"
-                          onclick="if( confirm($_GENERIC_CONFIRMATION) ) trash_media('<?= $item->id_media ?>', this, function() { $('article[data-post-id=<?= $item->id_post ?>]').fadeOut('fast', function() { $(this).remove(); }) })"
-                          ><span class="fa fa-trash fa-fw"></span><?= $current_module->language->record_nav->actions->trash ?></span>
-                <? endif; ?>
             </div>
             
         </article>
-    
+        
     <? endforeach; ?>
     
 </div>
 
-<div id="posts_pagination">
+<? if($items_data->pagination["total_pages"] > 1): ?>
+    <div id="posts_pagination">
+        
+        <? $items_data->browser->render_pagination_links($template->get("pagination_url_prefix"), $items_data->pagination); ?>
     
-    <? $items_data->browser->render_pagination_links($template->get("pagination_url_prefix"), $items_data->pagination); ?>
+    </div>
+<? endif; ?>
 
-</div>

@@ -15,7 +15,7 @@
 
 #quick_post_form_container {
     margin-bottom: 20px; background-color: white; padding: 10px;
-    border: 1px solid #E5E5E5; border-radius: 3px;
+    border: 1px solid #E5E5E5;
 }
 
 /* Space added when the slider has only one item */
@@ -23,17 +23,23 @@
 
 /* Common meta areas */
 
-.meta_box                       { padding: 10px 0 0 10px; }
+.meta_box                       { padding: 10px 0 0 10px; color: #979797; }
 .meta_box .user_avatar          { float: left; margin-right: 10px; width: 42px; height: 42px; }
 .meta_box .meta_field           { display: inline-block; padding: 0 5px 5px 0; }
-.meta_box .meta_field.dimmed    { color: dimgrey; }
-.meta_box .meta_field.important { color: blue; }
-.meta_box .meta_field.critical  { color: #FF0080; text-shadow: none; }
+.meta_box .meta_field.dimmed    { color: #979797; }
 .meta_box .meta_section         { font-size: 10pt; line-height: 16px; padding: 1px; }
 .meta_box .meta_section.upper   { font-size: 10pt; }
 
-.meta_box a.meta_field:hover            { color: #444444; }
-.meta_box .pseudo_link.meta_field:hover { color: #444444; }
+.meta_box a.meta_field                     { color: #979797; }
+.meta_box .meta_field.pseudo_link          { color: #979797; }
+.meta_box a.meta_field:visited             { color: #979797; }
+.meta_box .meta_field.pseudo_link:visited  { color: #979797; }
+
+.meta_box .meta_field.important { color: blue; }
+.meta_box .meta_field.critical  { color: #FF0080; text-shadow: none; }
+
+.meta_box a.meta_field:hover            { color: #E64946; }
+.meta_box .pseudo_link.meta_field:hover { color: #E64946; }
 
 .single_post .meta_box { padding: 0; }
 
@@ -46,16 +52,17 @@
 #posts_pagination a           { text-decoration: none; }
 #posts_pagination a[disabled] { cursor: default; color:  grey; }
 
-.posts_index article                          { margin-bottom: 20px; background-color: white;
-                                                border: 1px solid #E5E5E5; border-radius: 3px; }
-.posts_index article h1                       { margin: 0; padding: 5px 10px; }
-.posts_index article .post_contents           { padding: 10px; font-size: 14px; }
-.posts_index article .post_featured_image     { display: inline-block; float: left; margin: 0 20px 0 0; width: 115px; height: 115px; }
-.posts_index article .post_excerpt            { display: inline-block; width: calc(100% - 135px); }
-.posts_index article .post_excerpt.no_image   { display: block; width: 100%; }
+.posts_index article                          { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #EBEBEB; }
+.posts_index article h1                       { margin: 0 0 5px 0; padding: 0; font-size: 20px;
+                                                -ms-word-wrap: break-word; word-wrap: break-word; }
+.posts_index article .post_featured_image     { display: inline-block; float: left; margin: 0 20px 0 0; width: 235px; height: 175px; }
+.posts_index article .post_contents           { padding: 0; font-size: 14px;
+                                                display: inline-block; width: calc(100% - 255px); }
+.posts_index article .post_contents.no_image  { display: block; width: 100%; }
+.posts_index article .post_contents .meta_box { margin: 0; padding: 0; font-size: 13px; }
+.posts_index article .post_excerpt            { margin-top: 10px; }
 .posts_index article .post_excerpt *          { margin-top: 1px; margin-bottom: 1px; }
 .posts_index article .post_excerpt img        { max-width: 100%; }
-.posts_index article .post_contents .meta_box { margin-left: 0; padding-left: 0; }
 
 body#tinymce blockquote,
 article .post_contents blockquote,
@@ -69,7 +76,7 @@ article .post_contents blockquote,
 
 article.single_post, .content_frame {
     margin-bottom: 20px; background-color: white; padding: 10px;
-    border: 1px solid #E5E5E5; border-radius: 3px;
+    border: 1px solid #E5E5E5;
 }
 
 article.single_post.reviewing { background-color: #ffe3e6; }
@@ -156,11 +163,10 @@ article.single_post h1 .emojione { height: 38px;  }
 
 #featured_posts_column         { display: block; float: none; padding: 0; margin-bottom: 10px; }
 .featured_post                 { display: inline-block; text-decoration: none;
-                                 background-color: #F9F9F9; margin-bottom: 10px;
-                                 border: 1px solid #E5E5E5; border-radius: 3px;
+                                 background-color: #F5F5F5; margin-bottom: 10px;
                                  width: calc(50% - 4px); padding: 10px; }
 .featured_post:nth-child(even) { margin-left: 3px; margin-right: 0; }
-.featured_post .title          { display: block; margin-bottom: 5px; font-size: 14pt;
+.featured_post .title          { display: block; margin-bottom: 5px; font-size: 11pt;
                                  height: 36pt; overflow: hidden; }
 .featured_post .thumbnail      { display: block; border: none; }
 .featured_post .thumbnail img  { width: 100%; border: none; }
