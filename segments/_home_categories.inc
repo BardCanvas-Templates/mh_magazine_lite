@@ -6,15 +6,14 @@
  * @subpackage MH Magazine Lite Template
  * @author     Alejandro Caballero - lava.caballero@gmail.com
  *
- * @var template   $template
- * @var posts_data $posts_data
+ * @var template    $template
+ * @var post_record $post
  */
 
 use hng2_base\template;
 use hng2_modules\categories\categories_repository;
 use hng2_modules\categories\category_record;
 use hng2_modules\posts\post_record;
-use hng2_modules\posts\posts_data;
 use hng2_templates\mh_magazine_lite\posts_repository_extender;
 
 if( ! empty($_GET["offset"]) ) return;
@@ -47,10 +46,7 @@ foreach($categories as $category) $categories_by_id[$category->id_category] = $c
 $repository = new posts_repository_extender();
 $posts      = $repository->get_for_template_listing($categories);
 if( empty($posts) ) return;
-
-/** @var post_record $post */
 ?>
-
 <div id="per_category_index" class="posts_index clearfix">
     
     <? foreach($posts as $category_id => $list):
@@ -59,7 +55,8 @@ if( empty($posts) ) return;
             <h2><a href="<?= $config->full_root_path ?>/category/<?= $category->slug ?>"><?= $category->title ?></a></h2>
             <div class="listing">
                 <? foreach($list as $post):
-                    $class = empty($post->featured_image_thumbnail) ? "no_image" : "clearfix"; ?>
+                    $class = empty($post->featured_image_thumbnail) ? "no_image" : "clearfix";
+                    ?>
                     <div class="post <?= $class ?>">
                         <?
                         if( ! empty($post->featured_image_thumbnail) ):
@@ -87,5 +84,4 @@ if( empty($posts) ) return;
             </div>
         </div><?
     endforeach; ?>
-    
 </div>
