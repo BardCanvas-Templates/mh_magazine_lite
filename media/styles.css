@@ -71,8 +71,8 @@ td       .emojione { height: 11pt; }
 .fixed_font   .emojione ,
 code          .emojione { height: 10pt; }
 
-h1 .emojione { height: 32px; }
-h2 .emojione { height: 26px; }
+h1 .emojione { height: 28px; }
+h2 .emojione { height: 24px; }
 h3 .emojione { height: 20px; }
 
 /* Thumbnail placeholders */

@@ -55,6 +55,7 @@
 .posts_index article                          { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #EBEBEB; }
 .posts_index article h1                       { margin: 0 0 5px 0; padding: 0; font-size: 20px;
                                                 -ms-word-wrap: break-word; word-wrap: break-word; }
+.posts_index article h1 .emojione             { height: 22px; }
 .posts_index article .post_featured_image     { display: inline-block; float: left; margin: 0 20px 0 0; width: 235px; height: 175px; }
 .posts_index article .post_contents           { padding: 0; font-size: 14px;
                                                 display: inline-block; width: calc(100% - 255px); }
@@ -174,7 +175,7 @@ article.single_post h1 .emojione { height: 38px;  }
 .featured_post .admin_stuff    { font-size: 11pt; line-height: 12pt; padding-bottom: 2pt;
                                  border-top: 1px solid #FF0080; padding-top: 5px; margin-top: 5px; }
 
-.featured_post .title .emojione { height: 14pt; }
+.featured_post .title .emojione { height: 11pt; }
 
 /* Comments on single posts */
 
