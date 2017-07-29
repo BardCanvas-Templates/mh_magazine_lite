@@ -30,9 +30,9 @@ header("Content-Type: text/html; charset=utf-8"); ?>
     <? include ROOTPATH . "/includes/common_header.inc" ?>
     
     <!-- This template -->
-    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/styles~v<?=time()?>.css">
-    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/post_styles~v<?=time()?>.css">
-    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/colors~v<?=time()?>.css">
+    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/styles~v1.0.0-1.css">
+    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/post_styles~v1.0.0-1.css">
+    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/colors~v1.0.0-1.css">
     
     <!-- Always-on -->
     <? $template->render_always_on_files(); ?>
