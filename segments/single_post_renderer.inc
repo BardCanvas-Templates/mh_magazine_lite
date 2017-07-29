@@ -23,63 +23,17 @@ $author = new account($post->id_author);
          data-main-category="<?= $post->main_category_slug ?>" data-author-id="<?= $author->id_account ?>"
          data-author-role="<?= $author->get_role(true) ?>" data-author-level="<?= $author->level ?>">
     
-    <!-- Category and hashtags -->
-    <div class="meta_box clearfix">
-        <div class="meta_section">
-            <a class="meta_field" href="<?= $config->full_root_url ?>/category/<?= $post->main_category_slug ?>/">
-                <span class="fa fa-folder fa-fw"></span>
-                <?= $post->main_category_title ?>
-            </a>
-            
-            <? if( $post->main_category_visibility == "level_based" && ! empty($post->main_category_min_level) ): ?>
-                <span class="meta_field important">
-                    <span class="fa fa-users"></span>
-                    <?= $config->user_levels_by_level[$post->main_category_min_level]; ?>
-                </span>
-            <? elseif( $post->visibility == "level_based" ): ?>
-                <span class="meta_field important">
-                    <span class="fa fa-users"></span>
-                    <?= $config->user_levels_by_level[$post->author_level]; ?>
-                </span>
-            <? endif; ?>
-        </div>
-        
-        <? if( $account->level < config::MODERATOR_USER_LEVEL ): ?>
-            <? foreach( $post->get_filtered_tags_list() as $tag): ?>
-                <a class="meta_field" href="<?= $config->full_root_path ?>/tag/<?= $tag ?>" target="_blank">
-                    <span class="fa fa-hashtag"></span>
-                    <?= $tag ?>
-                </a>
-            <? endforeach; ?>
-        <? else: ?>
-            <? if( is_array($post->tags_list) ) foreach( $post->tags_list as $tag): ?>
-                <a class="meta_field" href="<?= $config->full_root_path ?>/tag/<?= $tag ?>" target="_blank">
-                    <span class="fa fa-hashtag"></span>
-                    <?= $tag ?>
-                </a>
-            <? endforeach; ?>
-        <? endif; ?>
-    </div>
-    
     <h1>
         <?= $post->get_processed_title() ?>
     </h1>
     
-    <!-- Author meta -->
-    <div class="meta_box clearfix">
+    <div class="meta_box">
         <div class="meta_section">
-            <?
-            $date        = date("Y/m/d", strtotime($post->publishing_date));
-            $date_string = time_complete_string($post->publishing_date) . " (" . time_elapsed_string($post->publishing_date) . ")";
-            echo replace_escaped_objects(
-                $template->language->posted_on_by, array(
-                '{$date}'   => "<a class='meta_field' href='{$config->full_root_url}/date/{$date}/'>{$date_string}</a>",
-                '{$author}' => "<a class='meta_field user_display_name' data-user-level='{$author->level}'
-                                   href='{$config->full_root_url}/user/{$author->user_name}/'>
-                                    <span class='fa fa-user fa-fw'></span> {$author->get_processed_display_name()}
-                                </a>",
-            )) ?>
-            
+            <a class="meta_field user_display_name" data-user-level="<?= $author->level ?>"
+               href="<?= $config->full_root_url ?>/user/<?= $author->user_name ?>/">
+                <span class="fa fa-user fa-fw"></span>
+                <?= $author->get_processed_display_name() ?>
+            </a>
             <? if($account->level >= config::COADMIN_USER_LEVEL && $account->id_account != $author->id_account): ?>
                 <span class="meta_field critical pseudo_link disable_user_link" onclick="if(confirm($_GENERIC_CONFIRMATION)) toggle_account( '<?= $author->id_account ?>', 'disable', this )">
                     <span class="fa fa-lock"></span>
@@ -95,7 +49,43 @@ $author = new account($post->id_author);
                 </span>
             <? endif; ?>
             
-            <!-- Extra metas -->
+            <a class="meta_field" href="<?= $config->full_root_url ?>/category/<?= $post->main_category_slug ?>/">
+                <span class="fa fa-folder fa-fw"></span>
+                <?= $post->main_category_title ?>
+            </a>
+            <? if( $post->main_category_visibility == "level_based" && ! empty($post->main_category_min_level) ): ?>
+                <span class="meta_field important">
+                    <span class="fa fa-users"></span>
+                    <?= $config->user_levels_by_level[$post->main_category_min_level]; ?>
+                </span>
+            <? elseif( $post->visibility == "level_based" ): ?>
+                <span class="meta_field important">
+                    <span class="fa fa-users"></span>
+                    <?= $config->user_levels_by_level[$post->author_level]; ?>
+                </span>
+            <? endif; ?>
+            
+            <? if( $account->level < config::MODERATOR_USER_LEVEL ): ?>
+                <? foreach( $post->get_filtered_tags_list() as $tag): ?>
+                    <a class="meta_field" href="<?= $config->full_root_path ?>/tag/<?= $tag ?>" target="_blank">
+                        <span class="fa fa-hashtag"></span>
+                        <?= $tag ?>
+                    </a>
+                <? endforeach; ?>
+            <? else: ?>
+                <? if( is_array($post->tags_list) ) foreach( $post->tags_list as $tag): ?>
+                    <a class="meta_field" href="<?= $config->full_root_path ?>/tag/<?= $tag ?>" target="_blank">
+                        <span class="fa fa-hashtag"></span>
+                        <?= $tag ?>
+                    </a>
+                <? endforeach; ?>
+            <? endif; ?>
+        </div>
+        <div class="meta_section">
+            <a class="meta_field dimmed" href="<?= $config->full_root_url ?>/date/<?= date("Y/m/d", strtotime($post->publishing_date)) ?>/">
+                <span class="fa fa-calendar fa-fw"></span>
+                <?= time_complete_string($post->publishing_date) . " (" . time_elapsed_string($post->publishing_date) . ")" ?>
+            </a>
             <span class="meta_field">
                 <span class="fa fa-eye fa-fw"></span>
                 <?= number_format($post->views); ?>

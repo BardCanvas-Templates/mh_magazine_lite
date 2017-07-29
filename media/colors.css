@@ -19,8 +19,8 @@ a h1 { color: black; }
 a h2 { color: black; }
 a h3 { color: black; }
 
-a:link,            .pseudo_link                            { color: black;   }
-a:visited,         .pseudo_link:visited                    { color: black;   }
+a:link,            .pseudo_link                            { color: #E64946; }
+a:visited,         .pseudo_link:visited                    { color: #E64946; }
 a:active, a:hover, .pseudo_link:active, .pseudo_link:hover { color: #E64946; }
 
 h1 a,          h1 .pseudo_link,       h2 a,          h2 .pseudo_link,       h3 a,          h3 .pseudo_link       { color: black;   }
