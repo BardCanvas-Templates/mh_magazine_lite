@@ -31,18 +31,19 @@ if( $template->get("exclude_home_slider") ) return;
     #posts_slider    { margin: 0 0 20px 0; padding: 0; height: 380px; overflow: hidden; }
     #posts_slider li { margin: 0; padding: 0; }
     
-    #posts_slider .outer          ,
-    #posts_slider .inner          { display: block; margin: 0; padding: 0; height: 380px; width: 100%; overflow: hidden;
-                                    text-align: center; background: none center center no-repeat; }
-    
+    #posts_slider .outer              ,
+    #posts_slider .inner              { display: block; margin: 0; padding: 0; height: 380px; width: 100%; overflow: hidden;
+                                        font-size: 14px; text-align: center; background: none center center no-repeat; }
     #posts_slider .outer              { background-size: cover; }
-    #posts_slider .inner              { display: inline-block; background-color: rgba(0, 0, 0, .75); background-size: contain; background-repeat: no-repeat; }
-    
-    #posts_slider .outer              { color: white; font-weight: bold; text-shadow: 1px 1px 10px rgba(0, 0, 0, 1); text-decoration: none; }
-    #posts_slider .inner .title       { line-height: 30px; height: 30px; overflow: hidden; padding-bottom: 5px; display: block; font-size: 24px; font-weight: bold; background-color: rgba(0, 0, 0, .25); }
-    #posts_slider .inner .image       { height: calc(100% - 85px); display: block; }
-    #posts_slider .inner .description { font-size: 20px; line-height: 30px; height: 30px; padding-bottom: 5px; display: block; font-style: italic; overflow: hidden; background-color: rgba(0, 0, 0, .25); }
-    #posts_slider .inner .details     { line-height: 20px; padding-bottom: 5px; display: block; background-color: rgba(0, 0, 0, .25); }
+    #posts_slider .inner              { display: inline-block; background-color: rgba(0, 0, 0, .75); background-repeat: no-repeat;
+                                        background-size: contain; }
+    #posts_slider .outer              { color: white; text-decoration: none; }
+    #posts_slider .caption_box        { display: block; width: 50%; height: calc(50% - 5px); margin-left: 50%; background-color: rgba(0, 0, 0, .75);
+                                        border-bottom: 5px solid #E64946; text-align: left; padding: 20px;
+                                        font-family: 'Open Sans', Arial, Helvetica, sans-serif; overflow: hidden; }
+    #posts_slider .inner .title       { padding-bottom: 10px; display: block; font-size: 24px; font-weight: bold; }
+    #posts_slider .inner .description { padding-bottom: 10px; display: block; }
+    #posts_slider .inner .details     { display: block; }
     #posts_slider .inner .expires     { color: yellow; }
     #posts_slider .inner img.emojione { display: inline; }
     
@@ -81,22 +82,23 @@ if( $template->get("exclude_home_slider") ) return;
         <li>
             <a class="outer" href="<?= $post->get_permalink() ?>" style="background-image: url('<?= $back_image ?>');">
                 <span class="inner" style="background-image: url('<?= $post_image ?>');">
-                    <span class="title"><?= $post->get_processed_title(false) ?></span>
-                    <span class="image"></span>
-                    <span class="description"><?= convert_emojis($post->excerpt) ?></span>
-                    <span class="details">
-                        <span class="author user_display_name" data-user-level="<?= $post->author_level ?>">
-                            <span class="fa fa-user"></span>
-                            <?= $post->get_processed_author_display_name() ?>
-                        </span>
-                        •
-                        <span class="published"><?= time_mini_string($post->publishing_date) ?></span>
-                        <? if($post->expiration_date != "0000-00-00 00:00:00"): ?>
-                            <span class="expires">
-                                <span class="fa fa-clock-o fa-fw"></span>
-                                <?= preg_replace('/\d+s/', "", time_remaining_string($post->expiration_date)) ?>
+                    <span class="caption_box">
+                        <span class="title"><?= $post->get_processed_title(false) ?></span>
+                        <span class="description"><?= convert_emojis($post->excerpt) ?></span>
+                        <span class="details">
+                            <span class="author user_display_name" data-user-level="<?= $post->author_level ?>">
+                                <span class="fa fa-user"></span>
+                                <?= $post->get_processed_author_display_name() ?>
                             </span>
-                        <? endif; ?>
+                            •
+                            <span class="published"><?= time_mini_string($post->publishing_date) ?></span>
+                            <? if($post->expiration_date != "0000-00-00 00:00:00"): ?>
+                                <span class="expires">
+                                    <span class="fa fa-clock-o fa-fw"></span>
+                                    <?= preg_replace('/\d+s/', "", time_remaining_string($post->expiration_date)) ?>
+                                </span>
+                            <? endif; ?>
+                        </span>
                     </span>
                 </span>
             </a>
