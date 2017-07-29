@@ -36,7 +36,7 @@ if( $template->get("exclude_home_slider") ) return;
                                         font-size: 14px; text-align: center; background: none center center no-repeat; }
     #posts_slider .outer              { background-size: cover; }
     #posts_slider .inner              { display: inline-block; background-color: rgba(0, 0, 0, .75); background-repeat: no-repeat;
-                                        background-size: contain; }
+                                        background-size: cover; }
     #posts_slider .outer              { color: white; text-decoration: none; }
     #posts_slider .caption_box        { display: block; width: 50%; height: calc(50% - 5px); margin-left: 50%; background-color: rgba(0, 0, 0, .75);
                                         border-bottom: 5px solid #E64946; text-align: left; padding: 20px;
