@@ -154,6 +154,9 @@ header("Content-Type: text/html; charset=utf-8"); ?>
                 include "{$this_module->abspath}/contents/{$include}";
             }
             
+            if( $settings->get("templates:mh_magazine_lite.listing_selection") == "" )
+                $config->globals["modules:posts.avoid_preloading_posts_for_home_index"] = true;
+            
             foreach($template->get_includes("home_content") as $module => $include)
             {
                 $this_module = $modules[$module];

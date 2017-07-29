@@ -174,6 +174,50 @@
             </options>
         </specs>
         
+        <specs is_separator="true">Home page options</specs>
+        
+        <specs key="listing_selection">
+            <title>Listings to show</title>
+            <description><![CDATA[
+                By default, this template shows the most recent posts grouped by
+                category <b>instead of</b> the standard posts index.
+                You can choose a different behavior here.<br><br>
+                
+                <i class="fa fa-info-circle"></i>
+                <b>Note:</b>
+                The standard listing can be individually turned off from
+                Posts reading/writing options > Indexes > Disable posts index on home page.
+                If you select here an option that shows it and it doesn't shows,
+                you should check if it is disabled.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value=""        >Only the per-category listings</option>
+                <option value="standard">Only the standard index</option>
+                <option value="both"    >Show both</option>
+            </options>
+        </specs>
+        
+        <specs key="per_category_limit">
+            <title>Post per category to show</title>
+            <description><![CDATA[
+                By default, only the last <code>3</code> posts will be shown per
+                each category on the home per-category listings.
+                You can change that amount here. 
+            ]]></description>
+            <type>number</type>
+        </specs>
+        
+        <specs key="per_category_slugs">
+            <title>Exclusive categories list</title>
+            <description><![CDATA[
+                By default, all categories will be scanned for posts on the
+                home per-category listings. If you want to limit to specific
+                categories, enter one slug per each line on this box.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
         <specs is_separator="true">Footer (additionally provided by this template)</specs>
         
         <specs key="disable_footer">

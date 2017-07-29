@@ -9,7 +9,6 @@
 /* Slider, for the home page */
 
 #posts_slider {
-    font-family: 'Open Sans Condensed', 'Arial Narrow', Arial, Helvetica, sans-serif;
     margin-bottom: 20px; background-color: white;
 }
 
@@ -45,6 +44,26 @@
 
 .single_post .signature_avatar { float: left; margin-right: 10px; width: 80px; height: 80px; }
 .single_post .author_signature ul { margin-left: 65px; }
+
+/* Per-category posts index */
+
+#per_category_index .listing_container                  { display: inline-block; vertical-align: top;
+                                                          width: calc(50% - 10px); margin-right: 20px; }
+#per_category_index .listing_container:nth-child(even)  { margin-right: 0; }
+#per_category_index .listing_container h2               { font-size: 20px; border-bottom: 3px solid #E64946;
+                                                          margin: 0 0 10px 0; padding: 0 0 5px 0;
+                                                          height: 40px; overflow: hidden; }
+#per_category_index .listing_container h3               { font-size: 14px; margin: 0 0 10px 0; }
+#per_category_index .listing_container .post            { margin: 0 0 20px 0; padding: 0 0 20px 0;
+                                                          border-bottom: 1px dotted #ebebeb; }
+#per_category_index .listing_container .thumbnail       { background: transparent center center no-repeat;
+                                                          background-size: cover;
+                                                          display: inline-block; float: left; margin-right: 20px; }
+#per_category_index .listing_container .thumbnail img   { width: 80px; height: 60px; }
+#per_category_index .listing_container .details         { font-size: 11px; color: #979797; display: inline-block;
+                                                          width: calc(100% - 100px); }
+
+#per_category_index .listing_container .post.no_image .details { width: 100%; }
 
 /* Posts */
 
@@ -297,6 +316,6 @@ article.special, .featured_post.special { border: 2px solid darkorange; border-l
 /* Post comments on indexes */
 
 ul.post_comments { padding-left: 22px; font-family: 'Open Sans Condensed', 'Arial Narrow', Arial, Helvetica, sans-serif;
-                   font-size: 11pt; line-height: 1.1em; margin-top: 10px !important; margin-bottom: 0; }
+                   font-size: 12pt; line-height: 1.1em; margin-top: 10px !important; margin-bottom: 0; }
 ul.post_comments .emojione { height: 1em; }
 ul.post_comments li img { max-width: 100%; }

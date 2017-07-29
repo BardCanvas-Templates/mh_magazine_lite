@@ -22,13 +22,19 @@ $has_featured_posts = count($posts_data->featured_posts) > 0 ? "true" : "false";
         <?
         $template->set("pagination_url_prefix", "$config->full_root_url/");
         
-        if( $settings->get("modules:posts.slider_categories") != "" && $posts_data->pagination["this_page_number"] == 1 )
+        if( $settings->get("modules:posts.slider_categories") != "" && $posts_data->pagination["this_page_number"] <= 1 )
             include __DIR__ . "/home_slider.inc";
         
         if( $has_featured_posts == "true" )
             include __DIR__ . "/home_featured_posts.inc";
         
-        include __DIR__ . "/post_index_renderer.inc";
+        $listing_selection = $settings->get("templates:mh_magazine_lite.listing_selection");
+        
+        if( $listing_selection == "both" || $listing_selection == "" )
+            include __DIR__ . "/_home_categories.inc";
+        
+        if( $listing_selection == "both" || $listing_selection == "standard" )
+            include __DIR__ . "/post_index_renderer.inc";
         ?>
     </div>
     

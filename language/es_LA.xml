@@ -176,6 +176,50 @@
             </options>
         </specs>
         
+        <specs is_separator="true">Opciones de la página principal</specs>
+        
+        <specs key="listing_selection">
+            <title>Listados a mostrar</title>
+            <description><![CDATA[
+                De forma predeterminada, esta plantilla muestra las entradas más recientes
+                agrupadas por categoría <b>en lugar del listado estándar</b> de entradas.
+                Puedes cambiar ese comportamiento aquí.<br><br>
+                
+                <i class="fa fa-info-circle"></i>
+                <b>Nota:</b>
+                El listado estándar puede desactivarse desde
+                Entradas (lectura/escritura) > Índices > Deshabilitar el índice de entradas en la página principal.
+                Si seleccionas aquí una opción que lo muestre y no aparece,
+                deberías checar si está desactivado.
+            ]]></description>
+            <type>list</type>
+            <options>
+                <option value=""        >Sólo agrupados por categoría</option>
+                <option value="standard">Sólo el índice estándar</option>
+                <option value="both"    >Mostrar ambos</option>
+            </options>
+        </specs>
+
+        <specs key="per_category_limit">
+            <title>Cantidad a entradas a mostrar</title>
+            <description><![CDATA[
+                De forma predeterminada, sólo se muestran las últimas <code>3</code> entradas
+                por cada categoría en los listados agrupados.
+                Puedes cambiar esa cantidad aquí.
+            ]]></description>
+            <type>number</type>
+        </specs>
+
+        <specs key="per_category_slugs">
+            <title>Sólo mostrar estas categorías</title>
+            <description><![CDATA[
+                De forma predeterminada, todas las categorías se buscarán por entradas
+                para los listados agrupados. Si deseas limitarlo a sólo ciertas categorías,
+                especifica aquí los slugs, uno por línea.
+            ]]></description>
+            <type>code</type>
+        </specs>
+        
         <specs is_separator="true">Pie de página (adicionalmente proveído por esta plantilla)</specs>
         
         <specs key="disable_footer">
