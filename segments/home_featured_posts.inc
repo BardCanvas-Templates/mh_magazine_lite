@@ -41,7 +41,6 @@ $this_module = $modules["posts"];
             
             <span class="title">
                 <?= $post->get_processed_title(false) ?>
-                [<?= $post->get_processed_author_display_name() ?>, <?= $post->main_category_title ?>]
                 <? if($post->expiration_date != "0000-00-00 00:00:00"): ?>
                     <span style="display: inline-block">
                         <span class="fa fa-clock-o fa-fw"></span>
