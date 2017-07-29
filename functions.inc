@@ -42,18 +42,16 @@ function build_mhmaglite_body_style()
 {
     global $settings, $template;
     
-    $bgcolor  = $settings->get("templates:mh_magazine_lite.body_background_color");
     $bgpos    = $settings->get("templates:mh_magazine_lite.body_background_image_position");
     $bgsize   = $settings->get("templates:mh_magazine_lite.body_background_image_size");
     $bgimage  = $settings->get("templates:mh_magazine_lite.body_background_image");
     $bgrepeat = $settings->get("templates:mh_magazine_lite.body_background_image_repeat");
     
-    if( empty($bgcolor)  ) $bgcolor = "black";
-    if( empty($bgimage)  ) $bgimage = "url('{$template->url}/media/default_background.jpg')"; else $bgimage = "url('$bgimage')";
     if( empty($bgpos)    ) $bgpos   = "top center";
     if( empty($bgsize)   ) $bgsize  = "cover";
-    
+    if( empty($bgimage)  ) $bgimage = "url('{$template->url}/media/default_background.jpg')"; else $bgimage = "url('$bgimage')";
     if( empty($bgrepeat) ) $bgrepeat = "fixed";
+    
     $attachment = "";
     if( $bgrepeat == "fixed" )
     {
@@ -61,7 +59,7 @@ function build_mhmaglite_body_style()
         $attachment = "background-attachment: fixed;";
     }
     
-    return "background: $bgcolor $bgimage $bgpos $bgrepeat; background-size: $bgsize; $attachment";
+    return "background: black $bgimage $bgpos $bgrepeat; background-size: $bgsize; $attachment";
 }
 
 function parse_mhmaglite_links_list($links, $using_bullets = false)

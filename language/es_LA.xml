@@ -105,20 +105,11 @@
         
         <specs is_separator="true">Apariencia del cuerpo</specs>
         
-        <specs key="body_background_color">
-            <title>Color de fondo</title>
-            <description><![CDATA[
-                Especifica un color a usar para el fondo de la página,
-                P.E. <code>white</code> or <code>#FFFFFF</code>.
-                Por defecto se usa <code>white</code>.
-            ]]></description>
-            <type>text</type>
-        </specs>
-        
         <specs key="body_background_image">
             <title>Imagen de fondo</title>
             <description><![CDATA[
-                Especifica una imagen a usar de fondo en la página.
+                Esta plantilla viene con ina imagen predefinida como fondo.
+                Si quieres cambiarla, usa este control.
             ]]></description>
             <type>@gallery:specs_renderer/image_selector</type>
             <options>
@@ -133,8 +124,8 @@
             ]]></description>
             <type>list</type>
             <options>
-                <option value="top left"     >Arriba a la izquierda (predeterminado)</option>
-                <option value="top center"   >Arriba al centro</option>
+                <option value="top center"   >Arriba al centro (predeterminado)</option>
+                <option value="top left"     >Arriba a la izquierda</option>
                 <option value="top right"    >Arriba a la derecha</option>
                 <option value="left center"  >Centro a la izquierda</option>
                 <option value="center center">Centrado en la página</option>
@@ -153,8 +144,8 @@
             ]]></description>
             <type>list</type>
             <options>
-                <option value="contain"  >Contener a la vista sin recortar (predeterminado)</option>
-                <option value="cover"    >Cubrir la vista, recortando los bordes</option>
+                <option value="cover"    >Cubrir la vista, recortando los bordes (predeterminado)</option>
+                <option value="contain"  >Contener a la vista sin recortar</option>
                 <option value="auto"     >Tamaño original</option>
                 <option value="50vw auto">50% del ancho de la ventana</option>
                 <option value="auto 50vh">50% del alto de la ventana</option>
@@ -168,11 +159,11 @@
             ]]></description>
             <type>list</type>
             <options>
+                <option value="fixed"    >Fijar en el fondo (no se desplaza)</option>
                 <option value="repeat"   >Mosaico en toda la página</option>
                 <option value="repeat-x" >Repetir horizontalmente</option>
                 <option value="repeat-y" >Repetir verticalmente</option>
                 <option value="no-repeat">Sin repetir (mostrar una sola vez)</option>
-                <option value="fixed"    >Fijar en el fondo (no se desplaza)</option>
             </options>
         </specs>
         

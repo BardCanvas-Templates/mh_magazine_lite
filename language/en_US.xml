@@ -103,20 +103,11 @@
         
         <specs is_separator="true">Body appearance</specs>
         
-        <specs key="body_background_color">
-            <title>Background Color</title>
-            <description><![CDATA[
-                Specify an HTML color to use as the body background,
-                E.G. <code>white</code> or <code>#FFFFFF</code>.
-                Defaults to <code>white</code>.
-            ]]></description>
-            <type>text</type>
-        </specs>
-        
         <specs key="body_background_image">
             <title>Background image</title>
             <description><![CDATA[
-                Specify an image to set as background
+                The template comes with a pre-defined background image.
+                Use this control to specify a different one.
             ]]></description>
             <type>@gallery:specs_renderer/image_selector</type>
             <options>
@@ -131,8 +122,8 @@
             ]]></description>
             <type>list</type>
             <options>
-                <option value="top left"     >Top left (default)</option>
-                <option value="top center"   >Top center</option>
+                <option value="top center"   >Top center (default)</option>
+                <option value="top left"     >Top left</option>
                 <option value="top right"    >Top right</option>
                 <option value="left center"  >Middle left</option>
                 <option value="center center">Middle center</option>
@@ -151,8 +142,8 @@
             ]]></description>
             <type>list</type>
             <options>
-                <option value="contain"  >Contain in the viewport, no cropping (default)</option>
-                <option value="cover"    >Cover the entire viewport, cropping the edges if needed</option>
+                <option value="cover"    >Cover the entire viewport, cropping the edges if needed (default)</option>
+                <option value="contain"  >Contain in the viewport, no cropping</option>
                 <option value="auto"     >No resizing</option>
                 <option value="50vw auto">50% of the viewport width</option>
                 <option value="auto 50vh">50% of the viewport height</option>
@@ -166,11 +157,11 @@
             ]]></description>
             <type>list</type>
             <options>
+                <option value="fixed"    >Keep fixed (not scrollable)</option>
                 <option value="repeat"   >Tile across the page</option>
                 <option value="repeat-x" >Repeat horizontally</option>
                 <option value="repeat-y" >Repeat vertically</option>
                 <option value="no-repeat">No repetition (show once)</option>
-                <option value="fixed"    >Keep fixed (not scrollable)</option>
             </options>
         </specs>
         
