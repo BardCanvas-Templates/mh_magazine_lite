@@ -40,7 +40,7 @@ header("Content-Type: text/html; charset=utf-8"); ?>
     <? include ROOTPATH . "/includes/common_header.inc" ?>
     
     <!-- This template -->
-    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/styles~v1.0.0-1.css">
+    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/styles~v1.0.1-1.css">
     <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/post_styles~v1.0.0-1.css">
     <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/colors~v1.0.0-1.css">
     <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/extras~v1.0.0-1.css">
@@ -57,7 +57,8 @@ header("Content-Type: text/html; charset=utf-8"); ?>
     }
     ?>
 </head>
-<body data-orientation="landscape" data-viewport-class="0" <?=$template->get("additional_body_attributes")?> 
+<body data-orientation="landscape" data-viewport-class="0"
+      <?=$template->get("additional_body_attributes")?> 
       data-page-tag="<?= $template->get("page_tag") ?>" class="admin"
       data-is-mobile="<?= is_mobile() ? "true" : "false" ?>"
       data-is-known-user="<?= $account->_exists ? "true" : "false" ?>"
