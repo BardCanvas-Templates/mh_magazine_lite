@@ -19,6 +19,7 @@ td       { font-family: 'Open Sans Condensed', 'Arial Narrow', Arial, Helvetica,
 #header .menu .main_menu_item { padding-left: 20px; padding-right: 20px; }
 
 #content { line-height: normal; float: left; padding: 20px; }
+body.admin #content, body.popup #content { float: none; }
 @media all and (max-width: 720px) { #content {padding-left:  2px; padding-right: 2px;} }
 
 body.home, body.main                              { }
