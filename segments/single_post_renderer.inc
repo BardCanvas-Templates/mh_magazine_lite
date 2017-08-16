@@ -14,9 +14,11 @@
 use hng2_base\account;
 use hng2_base\config;
 use hng2_base\module;
+use hng2_media\media_repository;
 use hng2_modules\posts\post_record;
 
 $author = new account($post->id_author);
+$media_repository = new media_repository();
 ?>
 
 <article class="post single_post <?= $post->status ?> clearfix" data-post-id="<?= $post->id_post ?>"
@@ -205,6 +207,14 @@ $author = new account($post->id_author);
     </p>
     
     <div class="post_contents">
+        <?
+        if( $post->featured_image_thumbnail && ! empty($post->id_featured_image) )
+        {
+            $image = $media_repository->get($post->id_featured_image);
+            $idesc = empty($image->description) ? "" : "<br>" . $image->get_processed_description();
+            echo "<p class='featured_image'><img src='{$post->featured_image_thumbnail}'>{$idesc}</p>";
+        }
+        ?>
         <?= $post->get_processed_content() ?>
         <? $current_module->load_extensions("front", "single_post_content_additions"); ?>
     </div>
