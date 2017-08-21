@@ -97,12 +97,10 @@ $this_module = $modules["gallery"];
                         </a>
                     <? endforeach; ?>
                     
-                    <? if( $account->level >= config::MODERATOR_USER_LEVEL ): ?>
-                        <span class="meta_field critical">
-                            <span class="fa fa-eye fa-fw"></span>
-                            <?= number_format($item->views); ?>
-                        </span>
-                    <? endif; ?>
+                    <span class="meta_field">
+                        <span class="fa fa-eye fa-fw"></span>
+                        <?= number_format($item->views); ?>
+                    </span>
                 </div>
                 
                 <div class="post_contents post_excerpt">

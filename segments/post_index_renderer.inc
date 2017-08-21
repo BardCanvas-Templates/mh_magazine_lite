@@ -139,12 +139,10 @@ $this_module->load_extensions("front", "index_renderer_before_internal_wrapper")
                 <!-- Extra metas -->
                 <div class="meta_box">
                     <div class="meta_section">
-                        <? if( $account->level >= config::MODERATOR_USER_LEVEL ): ?>
-                            <span class="meta_field critical">
-                                <span class="fa fa-eye fa-fw"></span>
-                                <?= number_format($post->views); ?>
-                            </span>
-                        <? endif; ?>
+                        <span class="meta_field">
+                            <span class="fa fa-eye fa-fw"></span>
+                            <?= number_format($post->views); ?>
+                        </span>
                         
                         <? if($post->expiration_date != "0000-00-00 00:00:00"): ?>
                             <span class="meta_field dimmed">
