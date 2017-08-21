@@ -72,6 +72,12 @@ if( empty($posts) ) return;
                                 <i class="fa fa-calendar"></i>
                                 <?= time_complete_string($post->publishing_date) ?>
                             </span>
+                            <? if( $post->views > 0 ): ?>
+                                <span class="nowrap">
+                                    <span class="fa fa-eye fa-fw"></span>
+                                    <?= number_format($post->views); ?>
+                                </span>
+                            <? endif; ?>
                             <? if($post->comments_count > 0): ?>
                                 <span class="nowrap">
                                     <i class="fa fa-comment-o"></i>
