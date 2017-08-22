@@ -208,11 +208,15 @@ $media_repository = new media_repository();
     
     <div class="post_contents">
         <?
-        if( $post->featured_image_thumbnail && ! empty($post->id_featured_image) )
+        if( ! empty($post->id_featured_image) )
         {
-            $image = $media_repository->get($post->id_featured_image);
-            $idesc = empty($image->description) ? "" : "<br>" . $image->get_processed_description();
-            echo "<p class='featured_image'><img src='{$post->featured_image_thumbnail}'>{$idesc}</p>";
+            if( $settings->get("modules:posts.automatic_featured_images") == "true"
+                && stristr($post->content, $post->id_featured_image) === false )
+            {
+                $image = $media_repository->get($post->id_featured_image);
+                $idesc = empty($image->description) ? "" : "<br>" . $image->get_processed_description();
+                echo "<p class='featured_image'><img src='{$post->featured_image_thumbnail}'>{$idesc}</p>";
+            }
         }
         ?>
         <?= $post->get_processed_content() ?>
