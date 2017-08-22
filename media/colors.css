@@ -20,14 +20,29 @@ a h2 { color: black; }
 a h3 { color: black; }
 
 a:link,            .pseudo_link                            { color: #E64946; }
-a:visited,         .pseudo_link:visited                    { color: #E64946; }
+a:visited,         .pseudo_link:visited                    { color: dimgrey; }
 a:active, a:hover, .pseudo_link:active, .pseudo_link:hover { color: #E64946; }
 
 h1 a,          h1 .pseudo_link,       h2 a,          h2 .pseudo_link,       h3 a,          h3 .pseudo_link       { color: black;   }
+h1 a:visited,  h1 .pseudo_link,       h2 a:visited,  h2 .pseudo_link,       h3 a:visited,  h3 .pseudo_link       { color: dimgrey; }
 h1 a:hover,    h1 .pseudo_link:hover, h2 a:hover,    h2 .pseudo_link:hover, h3 a:hover,    h3 .pseudo_link:hover { color: #E64946; }
 h1:link:hover, h1.pseudo_link:hover,  h2:link:hover, h2.pseudo_link:hover,  h3:link:hover, h3.pseudo_link:hover  { color: #E64946; }
 
 a:hover h1,    .pseudo_link:hover h1, a:hover h1,    .pseudo_link:hover h2, a:hover h3,    .pseudo_link:hover h3 { color: #E64946; }
+
+.posts_index article a:visited h1 { color: dimgrey; }
+.posts_index article a:visited h2 { color: dimgrey; }
+.posts_index article a:visited h3 { color: dimgrey; }
+
+.posts_index article a:hover h1 { color: #E64946; }
+.posts_index article a:hover h2 { color: #E64946; }
+.posts_index article a:hover h3 { color: #E64946; }
+
+a:visited.greengo  , a.greengo  , .pseudo_link.greengo  , .greengo   { color: green;     }
+a:visited.alternate, a.alternate, .pseudo_link.alternate, .alternate { color: royalblue; }
+a:visited.important, a.important, .pseudo_link.important, .important { color: orange;    }
+a:visited.critical , a.critical , .pseudo_link.critical , .critical  { color: red;       }
+a:visited.disabled , a.disabled , .pseudo_link.disabled , .disabled  { color: dimgrey;   }
 
 #header { color: black; background-color: white;   }
 #footer { color: white; background-color: #2A2A2A; }

@@ -75,11 +75,13 @@
     #per_category_index .listing_container { display: block; width: 100%; }
 }
 
+/*
 #posts_index_wrapper a:link       ,
 #posts_index_wrapper .pseudo_link { color: black; }
 
 #posts_index_wrapper a:visited            ,
-#posts_index_wrapper .pseudo_link:visited { color: black; }
+#posts_index_wrapper .pseudo_link:visited { color: dimgrey; }
+*/
 
 #posts_index_wrapper a:active            ,
 #posts_index_wrapper a:hover             ,

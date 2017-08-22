@@ -15,14 +15,14 @@
 #mhmaglite_custom_header .links_panel { display: inline-block; float: right; line-height: 96px; }
 
 #mhmaglite_custom_header .logo            { vertical-align: top; font-size: 60px; color: #E64946; font-weight: bold;
-    font-family: BenchNine, 'Arial Narrow', Arial, Helvetica, sans-serif; }
+                                            font-family: BenchNine, 'Arial Narrow', Arial, Helvetica, sans-serif; }
 #mhmaglite_custom_header .logo .image     { vertical-align: top; max-height: 60px; margin-right: 10px; max-width: 100%; }
 #mhmaglite_custom_header .logo .caption   { vertical-align: top; display: inline-block; position: relative; top: 5px; }
 
 #mhmaglite_custom_header .links_panel        { vertical-align: top; text-align: right; }
 #mhmaglite_custom_header .links_panel .links { display: inline-block; text-align: center;
-    line-height: normal; vertical-align: middle;
-    text-transform: uppercase; font-size: 11px; }
+                                               line-height: normal; vertical-align: middle;
+                                               text-transform: uppercase; font-size: 11px; }
 
 #mhmaglite_custom_header .links_panel .links .icon              { font-size: 10px; }
 #mhmaglite_custom_header .links_panel .links a                  { color: black; }
@@ -34,7 +34,7 @@
 @media all and (max-width: 480px) {
     #mhmaglite_custom_header .logo        { display: block; float: none; text-align: center; max-width: none; }
     #mhmaglite_custom_header .links_panel { display: block; float: none; text-align: center; max-width: none;
-        line-height: normal; margin-top: 20px; }
+                                            line-height: normal; margin-top: 20px; }
 }
 
 /*        */
