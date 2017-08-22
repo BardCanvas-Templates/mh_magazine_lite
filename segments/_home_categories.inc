@@ -70,7 +70,7 @@ if( empty($posts) ) return;
                             <h3><a href="<?= $post->get_permalink() ?>"><?= $post->title ?></a></h3>
                             <span class="nowrap">
                                 <i class="fa fa-calendar"></i>
-                                <?= time_complete_string($post->publishing_date) ?>
+                                <?= time_mini_string($post->publishing_date) . " (" . time_elapsed_string($post->publishing_date) . ")" ?>
                             </span>
                             <? if( $post->views > 0 ): ?>
                                 <span class="nowrap">
