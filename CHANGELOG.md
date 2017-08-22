@@ -1,6 +1,13 @@
 
 # MH Magazine Lite Template Change Log
 
+## [1.0.4] - 2017-08-22
+
+- View counters made public on indexes.
+- Tuned showing of featured images on single posts.
+- Color adjustments.
+- Changed way of showing dates in grouped category index.
+
 ## [1.0.3] - 2017-08-18
 
 - Added featured image to single posts.
