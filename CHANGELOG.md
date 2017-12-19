@@ -1,6 +1,10 @@
 
 # MH Magazine Lite Template Change Log
 
+## [1.0.6] - 2017-12-18
+
+- Added CSS fix for popup layout.
+
 ## [1.0.5] - 2017-12-14
 
 - Added TinyMCE support to popup layout.
