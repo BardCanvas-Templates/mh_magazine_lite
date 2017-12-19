@@ -30,7 +30,7 @@ body.home #body_wrapper, body.main #body_wrapper  { padding: 20px; max-width: 11
 @media all and (max-width:  768px) { body.home #body_wrapper, body.main #body_wrapper  { padding:    0; } }
 
 .dropdown_menu { font-family: 'Open Sans', Arial, Helvetica, sans-serif; }
-body.popup     { background-color: transparent; }
+body.popup     { background-color: transparent; color: black; }
 
 textarea, pre, .fixed_font, code { font-family: 'Lucida Console', 'Courier new', 'Courier', monospace; font-size: 10pt; }
 textarea.no_fw_font              { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 12pt; }
