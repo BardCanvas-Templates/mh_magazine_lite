@@ -36,7 +36,7 @@ if( ! empty($exclusive_slugs) )
     $categories_filter[] = "slug in ($sanitized_list)";
 }
 
-$categories = $categories_repository->find($categories_filter, 0, 0, "title asc");
+$categories = $categories_repository->find($categories_filter, 0, 0, "field(slug, $sanitized_list)");
 if( empty($categories) ) return;
 
 /** @var category_record[] $categories_by_id */
@@ -67,7 +67,7 @@ if( empty($posts) ) return;
                         endif;
                         
                         ?><div class="details">
-                            <h3><a href="<?= $post->get_permalink() ?>"><?= $post->title ?></a></h3>
+                            <h3><a href="<?= $post->get_permalink() ?>"><?= $post->get_processed_title(false) ?></a></h3>
                             <span class="nowrap">
                                 <i class="fa fa-calendar"></i>
                                 <?= time_mini_string($post->publishing_date) . " (" . time_elapsed_string($post->publishing_date) . ")" ?>
