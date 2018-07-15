@@ -1,6 +1,11 @@
 
 # MH Magazine Lite Template Change Log
 
+## [1.0.7] - 2018-07-15
+
+- Updated categories listing order on the home page.
+- Minimal output and CSS fixes.
+
 ## [1.0.6] - 2017-12-18
 
 - Added CSS fix for popup layout.
