@@ -111,6 +111,14 @@
 .posts_index article .post_excerpt *          { margin-top: 1px; margin-bottom: 1px; }
 .posts_index article .post_excerpt img        { max-width: 100%; }
 
+/* Responsiveness */
+
+@media all and (max-width: 640px)
+{
+    .posts_index article .post_featured_image { display: block; float: none; width: 100%; }
+    .posts_index article .post_contents       { display: block; width: 100%; }
+}
+
 /* Single post overrides */
 
 body#tinymce blockquote,

@@ -43,7 +43,7 @@ header("Content-Type: text/html; charset=utf-8"); ?>
     
     <!-- This template -->
     <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/styles~v1.0.2-1.css">
-    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/post_styles~v1.0.2-2.css">
+    <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/post_styles~v1.0.3-3.css">
     <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/colors~v1.0.1-6.css">
     <link rel="stylesheet" type="text/css" href="<?= $template->url ?>/media/extras~v1.0.1-1.css">
     
