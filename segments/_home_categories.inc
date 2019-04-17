@@ -36,6 +36,8 @@ if( ! empty($exclusive_slugs) )
     $categories_filter[] = "slug in ($sanitized_list)";
 }
 
+if( empty($sanitized_list) ) return;
+
 $categories = $categories_repository->find($categories_filter, 0, 0, "field(slug, $sanitized_list)");
 if( empty($categories) ) return;
 
