@@ -1,6 +1,10 @@
 
 # MH Magazine Lite Template Change Log
 
+## [1.0.9] - 2019-04-17
+
+- Reworked latest fix logic.
+
 ## [1.0.8] - 2019-04-17
 
 - Fixed database error when list of exclusive slugs for the category based listings was empty.
