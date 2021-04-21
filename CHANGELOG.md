@@ -1,6 +1,10 @@
 
 # MH Magazine Lite Template Change Log
 
+## [1.0.11] - 2021-04-20
+
+- Tuned the contact section on the user profile home.
+
 ## [1.0.10] - 2020-05-04
 
 - Added extension points on comments for single post segment.
