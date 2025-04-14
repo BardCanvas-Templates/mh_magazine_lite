@@ -1,6 +1,10 @@
 
 # MH Magazine Lite Template Change Log
 
+## [1.0.12] - 2025-04-13
+
+- Added support for hiding restricted tabs on the user profile home.
+
 ## [1.0.11] - 2021-04-20
 
 - Tuned the contact section on the user profile home.
